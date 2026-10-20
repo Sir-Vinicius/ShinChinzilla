@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     [Header("Detecção de Pouso")]
     [SerializeField] private LayerMask groundLayer; // Defina qual layer é o chão/blocos
     private Rigidbody rb;
-    private bool hasLanded = false; //Verifica se já pousou
+    public bool hasLanded = false; //Verifica se já pousou
     private bool isTransitioning = false; //Controla se está no meio da transição de câmeras
 
     void Awake()
@@ -99,6 +99,7 @@ public class CameraController : MonoBehaviour
         Debug.Log("Chinchila pousou!");
 
         isTransitioning = true;
+        hasLanded = true;
 
         //Ativa script de movimento, etc
     }
