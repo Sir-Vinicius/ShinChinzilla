@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestructibleBlock : MonoBehaviour
 {
     [Header("Configurações")]
-    [SerializeField] private float destroyDelay = 2f;
+    [SerializeField] private float destroyDelay = 3f;
     private bool isBroken = false;
 
     private void OnCollisionEnter(Collision collision)
@@ -16,7 +16,7 @@ public class DestructibleBlock : MonoBehaviour
 
     }
 
-    void BreakBlock()
+    public void BreakBlock()
     {
         isBroken = true;
 
