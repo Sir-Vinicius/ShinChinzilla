@@ -158,6 +158,7 @@ public class CannonLauncher : MonoBehaviour
 
         if (ballObject != null)
         {
+            
             //Ativa a bola
             ballObject.gameObject.SetActive(true);
 
@@ -167,6 +168,7 @@ public class CannonLauncher : MonoBehaviour
                 chinchillaRb.useGravity = true;
                 chinchillaRb.transform.position = launchPoint.position;
                 chinchillaRb.transform.rotation = launchPoint.rotation;
+
             }
 
             //Usa a direção para onde launchPoint está apontando
