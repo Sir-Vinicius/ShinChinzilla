@@ -452,6 +452,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8d96639f-8c88-4370-a2d7-4bd6c5cad140
+    m_ActionName: 'Player/TailAttack[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -503,7 +507,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -519,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d69378cdde8e349884af44b35341b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  myRB: {fileID: 0}
+  myRB: {fileID: 258933336}
   myCamera: {fileID: 13040479}
   vel: 5
   footPlayer: {fileID: 979818939}
