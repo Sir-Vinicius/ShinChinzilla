@@ -7,11 +7,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] private GameObject flightCamera; //Câmera Top-Down
     [SerializeField] private GameObject gameplayCamera; //Câmera de Gameplay
 
-
     [Header("Configurações da Câmera de Voo")]
     [SerializeField] private Vector3 flightCameraOffset = new Vector3(0f, 5f, -5f); //Distância da câmera no voo
     [SerializeField] private float flightCameraFollowSpeed = 3f;
-
 
     [Header("Configurações da Câmera de Gameplay")]
     [SerializeField] private Vector3 gameplayCameraOffset = new Vector3(0f, 3f, -3f); //Distância da câmera em gameplay
@@ -23,17 +21,21 @@ public class CameraController : MonoBehaviour
     [Header("Detecção de Pouso")]
     [SerializeField] private LayerMask groundLayer; // Defina qual layer é o chão/blocos
     private Rigidbody rb;
+    private ShinSwap shinSwap;
     public bool hasLanded = false; //Verifica se já pousou
     private bool isTransitioning = false; //Controla se está no meio da transição de câmeras
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        shinSwap = GetComponent<ShinSwap>();
     }
 
-    void OnEnable()
+    //Método chamado no CannonLauncher
+    public void EnableFlightCamera()
     {
         hasLanded = false;
+        isTransitioning = false;
 
         //Ativa a câmera de voo e desativa a do canhão
         if (flightCamera != null) flightCamera.SetActive(true);
@@ -44,7 +46,7 @@ public class CameraController : MonoBehaviour
     void LateUpdate()
     {
         //Enquanto está no ar a câmera de voo persegue a chinchila em top-down
-        if (!hasLanded && flightCamera != null)
+        if (!hasLanded && flightCamera != null && flightCamera.activeSelf)
         {
             Vector3 targetPosition = transform.position + flightCameraOffset;
             flightCamera.transform.position = Vector3.Lerp(flightCamera.transform.position, targetPosition, flightCameraFollowSpeed * Time.deltaTime);
@@ -89,7 +91,6 @@ public class CameraController : MonoBehaviour
         //Ou checa se a velocidade vertical ficou próxima de zero após o lançamento
         if (collision.relativeVelocity.magnitude > 1f) // Evita falso positivo logo ao nascer
         {
-            hasLanded = true;
             OnLanding();
         }
     }
@@ -101,6 +102,7 @@ public class CameraController : MonoBehaviour
         isTransitioning = true;
         hasLanded = true;
 
+        shinSwap.Swap();
         //Ativa script de movimento, etc
     }
 
