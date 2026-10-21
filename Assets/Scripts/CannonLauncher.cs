@@ -12,6 +12,8 @@ public class CannonLauncher : MonoBehaviour
     public enum CannonState {  Aiming, Charging, Launched}
 
     [Header("Referêncas")]
+    [SerializeField] private GameObject ballObject;
+    [SerializeField] private GameObject chinchillaObject;
     [SerializeField] private Rigidbody chinchillaRb;
     [SerializeField] private Transform launchPoint;
     [SerializeField] private Transform barrelTransform; //Tubo do canhão
@@ -59,11 +61,11 @@ public class CannonLauncher : MonoBehaviour
 
     void Start()
     {
-        if (chinchillaRb != null)
-        {
-            chinchillaRb.gameObject.SetActive(false);
-        }
-        else Debug.LogError("Rigidbody do Chinchilla não encontrado.");
+        if (ballObject != null) ballObject.SetActive(false);
+        if (chinchillaObject != null) chinchillaObject.SetActive(false);
+        if (chinchillaRb != null) chinchillaRb.mass = 1f;
+
+        else Debug.LogError("Objeto da bola não encontrado.");
 
         currentHorizontalAngle = transform.eulerAngles.y;
 
@@ -154,14 +156,15 @@ public class CannonLauncher : MonoBehaviour
             powerSlider.gameObject.SetActive(false);
         }
 
-        if (chinchillaRb != null)
+        if (ballObject != null)
         {
-            //Ativa a Chinchila
-            chinchillaRb.gameObject.SetActive(true);
+            //Ativa a bola
+            ballObject.gameObject.SetActive(true);
 
             //Teleporta a Chinchila para o ponto de lançamento
             if (launchPoint != null)
             {
+                chinchillaRb.useGravity = true;
                 chinchillaRb.transform.position = launchPoint.position;
                 chinchillaRb.transform.rotation = launchPoint.rotation;
             }
@@ -170,6 +173,9 @@ public class CannonLauncher : MonoBehaviour
             Vector3 launchDirection = (launchPoint.forward + Vector3.up * 0.6f).normalized;
      
             chinchillaRb.AddForce(launchDirection * currentForce, ForceMode.Impulse);
+
+            CameraController camController = chinchillaRb.GetComponent<CameraController>();
+            if (camController != null) camController.EnableFlightCamera();
 
             Debug.Log($"Chinchila lançada com força: {currentForce}");
         }
