@@ -2,7 +2,7 @@ using System;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+
 using Random = UnityEngine.Random;
 
 public class ChinchiillaImpact : MonoBehaviour

@@ -3,49 +3,53 @@ using UnityEngine.InputSystem;
 
 public class ShinSwap : MonoBehaviour
 {
-    private Rigidbody myRB;
-    private MeshFilter myMeshFilter;
+    [Header("Configurações da Troca")]
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private GameObject chinchillaObject;
+    [SerializeField] private GameObject ballObject;
+    private bool hasSwapped = false;
+
+    private Rigidbody chinchillaRb;
     private PlayerController playerController;
+    private TailAttack tailAttack;
 
     private CameraController cameraController;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
     void Start()
     {
-        myRB = GetComponent<Rigidbody>();
-        myMeshFilter = GetComponent<MeshFilter>();
+        chinchillaRb = GetComponent<Rigidbody>();
+        tailAttack = GetComponent<TailAttack>();
         playerController = GetComponent<PlayerController>();
         cameraController = GetComponent<CameraController>();
+
+        if (playerController != null) playerController.enabled = false; //desabilita o PlayerController
+        if (tailAttack != null) tailAttack.enabled = false; //desabilita o TailAttack
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Debug.Log(cameraController.hasLanded); 
+        if (cameraController != null) Debug.Log(cameraController.hasLanded); 
     }
 
-    public void Swap(InputAction.CallbackContext context)
+    public void Swap()
     {
-       if (myRB == null || myMeshFilter == null) return;
+       if (chinchillaRb == null) return;
 
         // verifica se está quase sem rotação angular
         if (cameraController.hasLanded)
         {
-            // cria um primitive temporário apenas para obter a mesh de cápsula
-            var tmp = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-            var capMesh = tmp.GetComponent<MeshFilter>().sharedMesh;
+            hasSwapped = true;
 
-            // aplica a mesh da cápsula ao MeshFilter do objeto
-            myMeshFilter.sharedMesh = capMesh;
+            ballObject.SetActive(false);
+            chinchillaObject.SetActive(true);
 
-            // se houver um MeshCollider, atualize também
-            //var mc = GetComponent<MeshCollider>();
-            //if (mc != null) mc.sharedMesh = capMesh;
+            if (chinchillaRb != null) chinchillaRb.mass = 50f;
+            if (chinchillaObject != null) chinchillaObject.transform.localEulerAngles = Vector3.zero;
+            if (playerController != null) playerController.enabled = true; //Habilita o PlayerController
+            if (tailAttack != null) tailAttack.enabled = true; //Habilita o TailAttack
 
-            // destrói o primitive temporário
-            Destroy(tmp);
-
-            playerController.enabled = true; // habilita o PlayerController
-
+            Debug.Log("Transformação feita");
         }
     }
 }

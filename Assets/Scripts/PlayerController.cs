@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,6 +30,14 @@ public class PlayerController : MonoBehaviour
         if (context.performed && isGrounded)
         {
             myRB.AddForce(Vector3.up * 5f, ForceMode.Impulse);
+        }
+    }
+
+    public void Reset(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

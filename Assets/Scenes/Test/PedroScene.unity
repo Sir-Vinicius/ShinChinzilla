@@ -1972,6 +1972,10 @@ MonoBehaviour:
   myRB: {fileID: 1862180024}
   myCamera: {fileID: 539298003}
   vel: 5
+  footPlayer: {fileID: 1862180023}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1862180027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2013,7 +2017,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1862180026}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Mover
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2109,6 +2113,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8d96639f-8c88-4370-a2d7-4bd6c5cad140
+    m_ActionName: 'Player/TailAttack[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
