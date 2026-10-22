@@ -207,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 13040476}
   serializedVersion: 2
   m_LocalRotation: {x: 0.25340134, y: -8.7789824e-11, z: 2.2996641e-11, w: 0.9673613}
-  m_LocalPosition: {x: -1.04193, y: 1.04, z: -10.491631}
+  m_LocalPosition: {x: -1.04193, y: 1.27, z: -11.028965}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -228,7 +228,7 @@ MonoBehaviour:
   ShowDebugText: 0
   ShowCameraFrustum: 1
   IgnoreTimeScale: 0
-  WorldUpOverride: {fileID: 403947423}
+  WorldUpOverride: {fileID: 258933334}
   ChannelMask: -1
   UpdateMethod: 2
   BlendUpdateMethod: 1
@@ -314,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 258933333}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -1.04193, y: -1.21, z: -6.49163}
+  m_LocalPosition: {x: -1.04193, y: -0.956, z: -6.49163}
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -659,7 +659,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &403947425
 MonoBehaviour:
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 403947427}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -818,10 +818,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 1.5306463
+  m_Height: 4.465502
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 2.124379, z: 1.0306466}
 --- !u!114 &403947427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,6 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   myRB: {fileID: 403947424}
   myCamera: {fileID: 13040479}
+  myAnimator: {fileID: 0}
   vel: 5
   footPlayer: {fileID: 979818939}
   playerLayer:
@@ -897,7 +898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1172e09faab4f0d49ba63d798f4c72fc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.52500015
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1172e09faab4f0d49ba63d798f4c72fc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1273,7 +1274,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 258933334}
+    TrackingTarget: {fileID: 403947423}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -1305,7 +1306,7 @@ Transform:
   m_GameObject: {fileID: 533014408}
   serializedVersion: 2
   m_LocalRotation: {x: 0.25340134, y: -8.440878e-11, z: 1.00894544e-11, w: 0.9673613}
-  m_LocalPosition: {x: -1.04193, y: 1.04, z: -10.491631}
+  m_LocalPosition: {x: -1.04193, y: 1.27, z: -11.028965}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
