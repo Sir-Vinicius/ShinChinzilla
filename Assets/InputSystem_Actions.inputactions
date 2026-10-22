@@ -80,7 +80,7 @@
                     "name": "Next",
                     "type": "Button",
                     "id": "b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false,
@@ -100,6 +100,16 @@
                     "name": "TailAttack",
                     "type": "Button",
                     "id": "8d96639f-8c88-4370-a2d7-4bd6c5cad140",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "974b7ce6-f51f-4a34-96a0-5eabb4bd234e",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -501,6 +511,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "TailAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "054f67dc-4a26-4c56-8476-b0405a73a1aa",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
