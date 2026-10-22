@@ -18,8 +18,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
-        myAnimator = GetComponent<Animator>();
+        myAnimator = GetComponentInChildren<Animator>(true);
         //myCamera = Camera.main.transform;
+
     }
     public void Move(InputAction.CallbackContext context)
     {
