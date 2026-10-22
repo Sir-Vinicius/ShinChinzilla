@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody myRB;
     public Transform myCamera;
+    public Animator myAnimator;
 
     private Vector2 direction;
 
@@ -17,12 +18,23 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         myRB = GetComponent<Rigidbody>();
+        myAnimator = GetComponent<Animator>();
         //myCamera = Camera.main.transform;
     }
     public void Move(InputAction.CallbackContext context)
     {
 
-        direction = context.ReadValue<Vector2>();
+        if (context.performed)
+        {
+            direction = context.ReadValue<Vector2>();
+            myAnimator.SetBool("Move", true);  
+        }
+        else if (context.canceled)
+        {
+            direction = Vector2.zero;
+            myAnimator.SetBool("Move", false);
+
+        }
     }
 
     public void Jump(InputAction.CallbackContext context)
