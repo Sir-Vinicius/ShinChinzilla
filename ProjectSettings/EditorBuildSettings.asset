@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes teste/PedroScene.unity
+    path: Assets/Scenes/Test/PedroScene.unity
     guid: 4801e0098b171cc4ebf5eca60ecf47bb
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
