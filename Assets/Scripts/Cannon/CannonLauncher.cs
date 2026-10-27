@@ -17,7 +17,9 @@ public class CannonLauncher : MonoBehaviour
     [SerializeField] private Rigidbody chinchillaRb;
     [SerializeField] private Transform launchPoint;
     [SerializeField] private Transform barrelTransform; //Tubo do canhão
+    [SerializeField] private LineRenderer lineRenderer; //Linha da trajetória
     public CannonState currentState = CannonState.Aiming;
+
 
     [Header("Configurações de Mira")]
     [SerializeField] private float horinzontalSpeed = 35f;
@@ -31,10 +33,15 @@ public class CannonLauncher : MonoBehaviour
     private float currentVerticalAngle = 0f; //Rotação Vertical W/S
 
     [Header("Configurações de Força")]
+    [SerializeField] private float chinchillaInitialMass = 1f;
     [SerializeField] private float minForce;
     [SerializeField] private float maxForce;
     [SerializeField] private float chargeSpeed;
     private float currentForce = 0f;
+
+    [Header("Configuração da Trajetória")]
+    [SerializeField] private int trajectoryPointCount = 30; //Quantidade de pontos da trajetória
+    [SerializeField] private float timeStep = 0.1f; //Intervalo de tempo entre cada ponto da trajetória
 
     [Header("UI da Barra de Força")]
     [SerializeField] private Slider powerSlider;
@@ -42,6 +49,7 @@ public class CannonLauncher : MonoBehaviour
     //Referências para Input System
     private CannonInput cannonInput;
     private Vector2 aimInput;
+    private bool shouldLaunch = false; //Bool para sincronizar o tiro com a física
 
     void Awake()
     {
@@ -50,9 +58,6 @@ public class CannonLauncher : MonoBehaviour
         //Leitura WASD para mirar
         cannonInput.Cannon.Aim.performed += ctx => aimInput = ctx.ReadValue<Vector2>();
         cannonInput.Cannon.Aim.canceled += ctx => aimInput = Vector2.zero;
-
-        cannonInput.Cannon.ChargeAndLaunch.started += ctx => StartCharging();
-        cannonInput.Cannon.ChargeAndLaunch.canceled += ctx => LaunchChinchilla();
     }
 
     private void OnEnable() => cannonInput.Enable();
@@ -63,8 +68,8 @@ public class CannonLauncher : MonoBehaviour
     {
         if (ballObject != null) ballObject.SetActive(false);
         if (chinchillaObject != null) chinchillaObject.SetActive(false);
-        if (chinchillaRb != null) chinchillaRb.mass = 1f;
 
+        if (chinchillaRb != null) chinchillaRb.mass = chinchillaInitialMass;
         else Debug.LogError("Objeto da bola não encontrado.");
 
         currentHorizontalAngle = transform.eulerAngles.y;
@@ -79,23 +84,45 @@ public class CannonLauncher : MonoBehaviour
             powerSlider.minValue = 0f;
             powerSlider.maxValue = 1f;
         }
+
+        if (lineRenderer != null) lineRenderer.positionCount = 0;
     }
 
     void Update()
     {
+        if (currentState == CannonState.Aiming && cannonInput.Cannon.ChargeAndLaunch.WasPressedThisFrame())
+        {
+            StartCharging();
+        }
+
+        if (currentState == CannonState.Charging && cannonInput.Cannon.ChargeAndLaunch.WasReleasedThisFrame())
+        {
+            shouldLaunch = true;
+        }
+
         switch (currentState)
         {
             case CannonState.Aiming:
                 HandleAiming();
+                DrawTrajectory(minForce); //Mostra uma prévia com a força mínima
                 break;
 
             case CannonState.Charging:
                 HandleCharging();
+                DrawTrajectory(currentForce); //Atualiza a linha conforme carrega a força!
                 break;
 
             case CannonState.Launched:
-                //Camera segue
                 break;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (shouldLaunch)
+        {
+            shouldLaunch = false;
+            LaunchChinchilla(); 
         }
     }
 
@@ -150,15 +177,14 @@ public class CannonLauncher : MonoBehaviour
 
         currentState = CannonState.Launched;
 
+        //Limpa e some com a linha de trajetória ao atirar
+        if (lineRenderer != null) lineRenderer.positionCount = 0;
+
         //Esconde a barra de força após o disparo
-        if (powerSlider != null)
-        {
-            powerSlider.gameObject.SetActive(false);
-        }
+        if (powerSlider != null) powerSlider.gameObject.SetActive(false);
 
         if (ballObject != null)
-        {
-            
+        {          
             //Ativa a bola
             ballObject.gameObject.SetActive(true);
 
@@ -168,8 +194,11 @@ public class CannonLauncher : MonoBehaviour
                 chinchillaRb.useGravity = true;
                 chinchillaRb.transform.position = launchPoint.position;
                 chinchillaRb.transform.rotation = launchPoint.rotation;
-
             }
+
+            //Reseta  para garantir precisão absoluta
+            chinchillaRb.linearVelocity = Vector3.zero;
+            chinchillaRb.angularVelocity = Vector3.zero;
 
             //Usa a direção para onde launchPoint está apontando
             Vector3 launchDirection = (launchPoint.forward + Vector3.up * 0.6f).normalized;
@@ -181,5 +210,37 @@ public class CannonLauncher : MonoBehaviour
 
             Debug.Log($"Chinchila lançada com força: {currentForce}");
         }
+    }
+
+    void DrawTrajectory(float forceToUse)
+    {
+        if (lineRenderer == null || launchPoint == null) return;
+
+        lineRenderer.positionCount = trajectoryPointCount;
+        Vector3[] points = new Vector3[trajectoryPointCount];
+
+        //Posição inicial do lançamento
+        Vector3 startPosition = launchPoint.position;
+
+        //Velocidade inicial simulada(considerando a massa 1f do início)
+        Vector3 launchDirection = (launchPoint.forward + Vector3.up * 0.6f).normalized;
+        Vector3 startVelocity = launchDirection * (forceToUse / chinchillaInitialMass);
+
+        for (int i = 0; i < trajectoryPointCount; i++)
+        {
+            float t = i * timeStep;
+
+            Vector3 point = startPosition + startVelocity * t + 0.5f * Physics.gravity * t * t;
+            points[i] = point;
+
+            if (i > 0 && Physics.Linecast(points[i - 1], points[i], out RaycastHit hit))
+            {
+                lineRenderer.positionCount = i + 1;
+                points[i] = hit.point;
+                break;
+            }
+        }
+
+        lineRenderer.SetPositions(points);
     }
 }

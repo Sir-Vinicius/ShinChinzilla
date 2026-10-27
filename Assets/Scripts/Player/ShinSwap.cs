@@ -7,6 +7,7 @@ public class ShinSwap : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private GameObject chinchillaObject;
     [SerializeField] private GameObject ballObject;
+    [SerializeField] private float chinchillaMass = 50f;
     private bool hasSwapped = false;
 
     private Rigidbody chinchillaRb;
@@ -44,7 +45,7 @@ public class ShinSwap : MonoBehaviour
             ballObject.SetActive(false);
             chinchillaObject.SetActive(true);
 
-            if (chinchillaRb != null) chinchillaRb.mass = 50f;
+            if (chinchillaRb != null) chinchillaRb.mass = chinchillaMass;
             if (chinchillaObject != null) chinchillaObject.transform.localEulerAngles = Vector3.zero;
             if (playerController != null) playerController.enabled = true; //Habilita o PlayerController
             if (tailAttack != null) tailAttack.enabled = true; //Habilita o TailAttack
