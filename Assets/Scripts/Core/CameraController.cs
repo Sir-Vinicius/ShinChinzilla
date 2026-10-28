@@ -89,10 +89,13 @@ public class CameraController : MonoBehaviour
 
         //Verifica se o objeto que ela bateu pertence à camada de chão/destrutíveis
         //Ou checa se a velocidade vertical ficou próxima de zero após o lançamento
-        if (collision.relativeVelocity.magnitude > 1f) // Evita falso positivo logo ao nascer
+        if (LayerMask.LayerToName(collision.gameObject.layer) == "Ground")
         {
-            OnLanding();
-        }
+            if (collision.relativeVelocity.magnitude > 1f) // Evita falso positivo logo ao nascer
+            {
+                OnLanding();
+            }
+        }        
     }
 
     void OnLanding()
