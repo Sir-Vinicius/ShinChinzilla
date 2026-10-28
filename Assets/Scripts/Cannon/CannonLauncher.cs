@@ -19,6 +19,8 @@ public class CannonLauncher : MonoBehaviour
     [SerializeField] private Transform barrelTransform; //Tubo do canhão
     public CannonState currentState = CannonState.Aiming;
 
+    [SerializeField] private GameManager gameManager;
+
     [Header("Configurações de Mira")]
     [SerializeField] private float horinzontalSpeed = 35f;
     [SerializeField] private float verticalSpeed = 35f;
@@ -147,6 +149,14 @@ public class CannonLauncher : MonoBehaviour
     void LaunchChinchilla()
     {
         if (currentState != CannonState.Charging) return;
+
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager não foi atribuído no CannonLauncher.");
+            return;
+        }
+
+        if (!gameManager.StartAttempt()) return;
 
         currentState = CannonState.Launched;
 

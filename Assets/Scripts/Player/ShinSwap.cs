@@ -27,11 +27,6 @@ public class ShinSwap : MonoBehaviour
         if (tailAttack != null) tailAttack.enabled = false; //desabilita o TailAttack
     }
 
-    void Update()
-    {
-        if (cameraController != null) Debug.Log(cameraController.hasLanded); 
-    }
-
     public void Swap()
     {
        if (chinchillaRb == null) return;

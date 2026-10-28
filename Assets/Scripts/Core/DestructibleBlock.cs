@@ -27,6 +27,8 @@ public class DestructibleBlock : MonoBehaviour
 
         isBroken = true;
 
+        Debug.Log($"Destruição registrada em {gameObject.name}");
+
         Destroyed?.Invoke(this);
 
         //Adicionar VFX depois
