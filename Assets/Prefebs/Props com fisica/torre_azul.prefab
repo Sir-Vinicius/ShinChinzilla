@@ -45,6 +45,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Telhado_Torre_Central_Vermelho (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8354441375733764751, guid: 9ab2f200534e72d499e3c81dfc32252e, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: 8813147241546179525, guid: 9ab2f200534e72d499e3c81dfc32252e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -106,6 +110,10 @@ PrefabInstance:
     - target: {fileID: 44528118998521352, guid: b158beb47c681d64db7cc5920a83440f, type: 3}
       propertyPath: m_Name
       value: Estampa_Col3_Porta_Azul (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 44528118998521352, guid: b158beb47c681d64db7cc5920a83440f, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     - target: {fileID: 8703909007304859769, guid: b158beb47c681d64db7cc5920a83440f, type: 3}
       propertyPath: m_LocalPosition.x

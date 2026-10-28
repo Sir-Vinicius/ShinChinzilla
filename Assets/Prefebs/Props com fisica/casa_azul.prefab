@@ -45,6 +45,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Estampa_Col4_Topo_Azul (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 391789482565680585, guid: 97a784506f8e1e24e9504babdb8b8dd9, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: 450394690969729559, guid: 97a784506f8e1e24e9504babdb8b8dd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.7993803
@@ -106,6 +110,10 @@ PrefabInstance:
     - target: {fileID: 8354441375733764751, guid: 9ab2f200534e72d499e3c81dfc32252e, type: 3}
       propertyPath: m_Name
       value: Telhado_Torre_Central_Vermelho (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8354441375733764751, guid: 9ab2f200534e72d499e3c81dfc32252e, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     - target: {fileID: 8813147241546179525, guid: 9ab2f200534e72d499e3c81dfc32252e, type: 3}
       propertyPath: m_LocalPosition.x

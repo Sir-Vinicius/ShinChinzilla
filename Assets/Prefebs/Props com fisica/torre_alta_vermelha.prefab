@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bloco_Parede_Col2_Azul (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5144154579746222885, guid: 9dad4958d407bc241972a5acf252349f, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -157,6 +161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bloco_Casinha_Dir_Janelas (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7672633039691965809, guid: a403050e6f602324399458a1f88faede, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -175,6 +183,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4791357873592463684}
     m_Modifications:
+    - target: {fileID: 798608049133374719, guid: 2d095f3bffb6cee47bcbcb2d0f51c4fb, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: 1686103405933537358, guid: 2d095f3bffb6cee47bcbcb2d0f51c4fb, type: 3}
       propertyPath: m_Name
       value: torre_vermelho (1)
@@ -219,6 +231,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9176381350819957427, guid: 2d095f3bffb6cee47bcbcb2d0f51c4fb, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -240,6 +256,10 @@ PrefabInstance:
     - target: {fileID: 1524731862730818818, guid: db521307a194119438fe30c677702141, type: 3}
       propertyPath: m_Name
       value: Bloco_Parede_Col1_Verde (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524731862730818818, guid: db521307a194119438fe30c677702141, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     - target: {fileID: 2963203319893260747, guid: db521307a194119438fe30c677702141, type: 3}
       propertyPath: m_LocalPosition.x

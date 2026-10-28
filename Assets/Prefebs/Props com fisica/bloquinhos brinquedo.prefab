@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9023223992760898120, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.76
@@ -48,9 +52,101 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8319867452463635484, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -7777359571581357996, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -7238053476683475755, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -6307883454163789107, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -5929718945749552555, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -2901712526827044755, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -2856323801935345370, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -1902658147417358330, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -1420049149617722043, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -1036731512842140118, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -541547529731386547, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: -325741813322926225, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 315421780325015878, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 417721988701547165, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
       propertyPath: m_Name
       value: bloquinhos brinquedo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399045990229188718, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337544935645780591, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161388525673889534, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 4562556353989113512, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630294787848718626, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371977679890132696, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098729286169560055, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 6424661529297356447, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922445274632412501, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

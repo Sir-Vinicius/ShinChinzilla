@@ -45,6 +45,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Telhado_Torre_Central_Vermelho (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8354441375733764751, guid: 9ab2f200534e72d499e3c81dfc32252e, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: 8813147241546179525, guid: 9ab2f200534e72d499e3c81dfc32252e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -106,6 +110,10 @@ PrefabInstance:
     - target: {fileID: 6680184899057844783, guid: 13071fbee5a6fe2478326a91837a1d79, type: 3}
       propertyPath: m_Name
       value: Bloco_Torre_Central_Relogio_Vermelho (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680184899057844783, guid: 13071fbee5a6fe2478326a91837a1d79, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     - target: {fileID: 8985981275645276259, guid: 13071fbee5a6fe2478326a91837a1d79, type: 3}
       propertyPath: m_LocalPosition.x
