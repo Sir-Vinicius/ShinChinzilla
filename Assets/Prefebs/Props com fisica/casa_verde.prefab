@@ -45,6 +45,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Telhado_Torre_Central_Vermelho (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8354441375733764751, guid: 9ab2f200534e72d499e3c81dfc32252e, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: 8813147241546179525, guid: 9ab2f200534e72d499e3c81dfc32252e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -154,6 +158,10 @@ PrefabInstance:
     - target: {fileID: 1885311877911864190, guid: fb5ef2c832b7c044a835ff12eff6a8b3, type: 3}
       propertyPath: m_Name
       value: Estampa_Chao_FrenteEsq_Janela_Verde (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885311877911864190, guid: fb5ef2c832b7c044a835ff12eff6a8b3, type: 3}
+      propertyPath: m_TagString
+      value: Block
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
