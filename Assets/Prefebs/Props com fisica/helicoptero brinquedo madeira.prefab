@@ -60,9 +60,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8163030824777331781, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -6120496311374979427, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -4225260667192641431, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -19430594520372214, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 487580735162384601, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
       propertyPath: m_Name
       value: helicoptero brinquedo madeira
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704565191272315828, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179963384835504405, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637570089943791591, guid: 55c5845557cf36b4296faa8124aaa83c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
