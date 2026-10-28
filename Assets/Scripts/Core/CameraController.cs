@@ -1,11 +1,12 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     [Header("Câmeras")]
-    [SerializeField] private GameObject cannonCamera; //Câmera do Launcher
-    [SerializeField] private GameObject flightCamera; //Câmera Top-Down
-    [SerializeField] private GameObject gameplayCamera; //Câmera de Gameplay
+    [SerializeField] private CinemachineCamera cannonCamera; //Câmera do Launcher
+    [SerializeField] private CinemachineCamera flightCamera; //Câmera Top-Down
+    [SerializeField] private CinemachineCamera gameplayCamera; //Câmera de Gameplay
 
     [Header("Configurações da Câmera de Voo")]
     [SerializeField] private Vector3 flightCameraOffset = new Vector3(0f, 5f, -5f); //Distância da câmera no voo
@@ -37,14 +38,19 @@ public class CameraController : MonoBehaviour
         hasLanded = false;
         isTransitioning = false;
 
-        //Ativa a câmera de voo e desativa a do canhão
-        if (flightCamera != null) flightCamera.SetActive(true);
-        if (cannonCamera != null) cannonCamera.SetActive(false);
-        if (gameplayCamera != null) gameplayCamera.SetActive(false);
+        flightCamera.Priority = 20; //Prioridade maior para a câmera de voo
+        cannonCamera.Priority = 10; //Prioridade menor para a câmera do canhão
+
+        /* //Ativa a câmera de voo e desativa a do canhão
+         if (flightCamera != null) flightCamera.SetActive(true);
+         if (cannonCamera != null) cannonCamera.SetActive(false);
+         if (gameplayCamera != null) gameplayCamera.SetActive(false);
+         */
     }
 
     void LateUpdate()
     {
+        /*
         //Enquanto está no ar a câmera de voo persegue a chinchila em top-down
         if (!hasLanded && flightCamera != null && flightCamera.activeSelf)
         {
@@ -66,37 +72,34 @@ public class CameraController : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(transform.position - flightCamera.transform.position);
             flightCamera.transform.rotation = Quaternion.Slerp(flightCamera.transform.rotation, targetRotation, transitionSpeed * Time.deltaTime);
 
-            //Se a câmera de voo chegou perto o suficiente da posição final faz a troca
-            if (Vector3.Distance(flightCamera.transform.position, targetPosition) < 0.2f)
+         */   //Se a câmera de voo chegou perto o suficiente da posição final faz a troca
+            if (hasLanded)
             {
                 isTransitioning = false;
-                flightCamera.SetActive(false);
-                gameplayCamera.SetActive(true);
+                gameplayCamera.Priority = 20; //Prioridade maior para a câmera de gameplay
+                flightCamera.Priority = 10; //Prioridade menor para a câmera de voo
+                                            //flightCamera.SetActive(false);
+                                            //gameplayCamera.SetActive(true);
             }
-        }
-        else if (hasLanded && !isTransitioning && gameplayCamera != null)
-        {
-            Vector3 targetPosition = transform.position + gameplayCameraOffset;
-            gameplayCamera.transform.position = Vector3.Lerp(gameplayCamera.transform.position, targetPosition, gameplayCameraFollowSpeed * Time.deltaTime);
-            gameplayCamera.transform.LookAt(transform.position);
-        }
-    }
+     }
+            
 
-    //Detecta quando a chinchila bate no chão ou nos blocos
-    private void OnCollisionEnter(Collision collision)
+
+//Detecta quando a chinchila bate no chão ou nos blocos
+private void OnCollisionEnter(Collision collision)
+{
+    if (hasLanded) return;
+
+    //Verifica se o objeto que ela bateu pertence à camada de chão/destrutíveis
+    //Ou checa se a velocidade vertical ficou próxima de zero após o lançamento
+    if (LayerMask.LayerToName(collision.gameObject.layer) == "Ground")
     {
-        if (hasLanded) return;
-
-        //Verifica se o objeto que ela bateu pertence à camada de chão/destrutíveis
-        //Ou checa se a velocidade vertical ficou próxima de zero após o lançamento
-        if (LayerMask.LayerToName(collision.gameObject.layer) == "Ground")
+        if (collision.relativeVelocity.magnitude > 1f) // Evita falso positivo logo ao nascer
         {
-            if (collision.relativeVelocity.magnitude > 1f) // Evita falso positivo logo ao nascer
-            {
-                OnLanding();
-            }
-        }        
+            OnLanding();
+        }
     }
+}
 
     void OnLanding()
     {
