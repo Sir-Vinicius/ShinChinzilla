@@ -47,6 +47,12 @@ public class ChinchiillaImpact : MonoBehaviour
             if (rbBlock != null && rbBlock.gameObject != gameObject)
             {
                 rbBlock.AddExplosionForce(explosionForce, impactPoint, explosionRadius, upwardsModifier, ForceMode.Impulse);
+
+                DestructibleBlock destructible = hit.GetComponent<DestructibleBlock>();
+                if (destructible != null)
+                {
+                    destructible.BreakBlock();
+                }
             }
         }
     }

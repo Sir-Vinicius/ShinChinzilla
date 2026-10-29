@@ -242,8 +242,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 238.70308, y: 54.509785, z: 12.639529}
-  m_Center: {x: -119.85163, y: -7.972981, z: -8.964847}
+  m_Size: {x: 238.70308, y: 544.34064, z: 12.639529}
+  m_Center: {x: -119.85163, y: 236.94244, z: -8.962945}
 --- !u!1001 &8728959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,8 +494,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 308.55145, y: 44.789265, z: 19.715446}
-  m_Center: {x: -107.86252, y: 7.5050645, z: -3.9024165}
+  m_Size: {x: 308.55145, y: 419.40405, z: 19.715446}
+  m_Center: {x: -107.862595, y: 194.81241, z: -3.9024174}
 --- !u!1 &44910275 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
@@ -547,8 +547,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 205.49023, y: 57.183907, z: 15.23663}
-  m_Center: {x: -102.245804, y: -2.3712428, z: -8.118342}
+  m_Size: {x: 254.21498, y: 536.4447, z: 15.23663}
+  m_Center: {x: -113.44586, y: 237.25902, z: -8.118385}
 --- !u!1001 &45255889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25546,11 +25546,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1350306000895093362, guid: f65d395281ee8f04eac9f62028806910, type: 3}
       propertyPath: maxForce
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1350306000895093362, guid: f65d395281ee8f04eac9f62028806910, type: 3}
       propertyPath: minForce
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1350306000895093362, guid: f65d395281ee8f04eac9f62028806910, type: 3}
       propertyPath: ballObject
@@ -25558,7 +25558,7 @@ PrefabInstance:
       objectReference: {fileID: 1446020859}
     - target: {fileID: 1350306000895093362, guid: f65d395281ee8f04eac9f62028806910, type: 3}
       propertyPath: chargeSpeed
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1350306000895093362, guid: f65d395281ee8f04eac9f62028806910, type: 3}
       propertyPath: powerSlider
@@ -25575,6 +25575,14 @@ PrefabInstance:
     - target: {fileID: 1350306000895093362, guid: f65d395281ee8f04eac9f62028806910, type: 3}
       propertyPath: maxVerticalAngle
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350306000895093362, guid: f65d395281ee8f04eac9f62028806910, type: 3}
+      propertyPath: maxHorizontalAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1350306000895093362, guid: f65d395281ee8f04eac9f62028806910, type: 3}
+      propertyPath: minHorizontalAngle
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 8090447671508374974, guid: f65d395281ee8f04eac9f62028806910, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29019,6 +29027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: onda
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29531,6 +29543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: onda (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29665,8 +29681,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 300.08304, y: 44.063507, z: 17.85177}
-  m_Center: {x: -110.66794, y: 7.939253, z: -7.3750806}
+  m_Size: {x: 300.08304, y: 438.14395, z: 17.85177}
+  m_Center: {x: -110.66794, y: 204.9827, z: -7.3750806}
 --- !u!1001 &863779313
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30105,6 +30121,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
       propertyPath: m_Name
       value: onda (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30628,8 +30648,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 316.3305, y: 52.89397, z: 13.883367}
-  m_Center: {x: -109.876144, y: 6.913364, z: -5.5486126}
+  m_Size: {x: 316.3305, y: 431.24377, z: 13.883367}
+  m_Center: {x: -109.87615, y: 196.08826, z: -5.5486126}
 --- !u!4 &985495717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9101516575882086022, guid: eed620e455b407844841a15b9f717333, type: 3}
@@ -31007,6 +31027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: onda (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31208,6 +31232,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
       propertyPath: m_Name
       value: onda (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31939,8 +31967,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 267.53836, y: 32.07064, z: 16.563599}
-  m_Center: {x: -126.732605, y: 15.535318, z: -6.823099}
+  m_Size: {x: 285.21878, y: 426.86142, z: 16.563599}
+  m_Center: {x: -117.89272, y: 212.93076, z: -6.823099}
 --- !u!4 &1108093136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 201058133951895287, guid: 30734416d630a6d42a826700c27170b9, type: 3}
@@ -34209,6 +34237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: onda (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35216,6 +35248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: onda (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35283,8 +35319,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 210.9815, y: 48.764008, z: 16.748491}
-  m_Center: {x: -104.99103, y: 8.346631, z: -8.873584}
+  m_Size: {x: 232.80338, y: 404.64764, z: 16.748491}
+  m_Center: {x: -94.0801, y: 186.28833, z: -8.872036}
 --- !u!4 &1493702202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6309553917702377698, guid: 0b376ad1008f92e4386edf10b4dd1322, type: 3}
@@ -36611,6 +36647,10 @@ PrefabInstance:
       propertyPath: myCamera
       value: 
       objectReference: {fileID: 212578716}
+    - target: {fileID: 6289157886107800178, guid: 8334a3d27e161a34d9cd2aea5106afba, type: 3}
+      propertyPath: wallBounceForce
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6405854713752137426, guid: 8334a3d27e161a34d9cd2aea5106afba, type: 3}
       propertyPath: checkpoint
       value: 
@@ -37357,6 +37397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: onda (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64683892bde21594e9587e555d7a8f39, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37481,8 +37525,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 313.71875, y: 47.52478, z: 12.488203}
-  m_Center: {x: -115.07787, y: -1.5237895, z: -8.901747}
+  m_Size: {x: 313.71875, y: 526.82556, z: 12.488203}
+  m_Center: {x: -115.07787, y: 238.12662, z: -8.901747}
 --- !u!1001 &1792149731
 PrefabInstance:
   m_ObjectHideFlags: 0
