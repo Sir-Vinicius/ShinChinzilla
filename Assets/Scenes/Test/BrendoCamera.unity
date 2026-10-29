@@ -33601,9 +33601,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c633f5d744dab784f90ecd51d9f25525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  cannonCamera: {fileID: 104103625}
-  flightCamera: {fileID: 1285212602}
-  gameplayCamera: {fileID: 539297999}
+  cannonCamera: {fileID: 0}
+  flightCamera: {fileID: 0}
+  gameplayCamera: {fileID: 0}
   flightCameraOffset: {x: 0, y: 3, z: -3}
   flightCameraFollowSpeed: 5
   gameplayCameraOffset: {x: 0, y: 1, z: -2.25}
