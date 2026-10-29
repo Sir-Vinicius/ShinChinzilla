@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7676213602867699776}
   m_Layer: 0
   m_Name: casa_verde
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
