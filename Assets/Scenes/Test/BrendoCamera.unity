@@ -39732,27 +39732,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785532945335078786, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1
+      value: 3.9399996
       objectReference: {fileID: 0}
     - target: {fileID: 1785532945335078786, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.711025
+      value: -9.711025
       objectReference: {fileID: 0}
     - target: {fileID: 1785532945335078786, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9673613
+      value: 0.9619417
       objectReference: {fileID: 0}
     - target: {fileID: 1785532945335078786, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.25340134
+      value: 0.27325466
       objectReference: {fileID: 0}
     - target: {fileID: 1785532945335078786, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -8.440878e-11
+      value: 0.000000020986503
       objectReference: {fileID: 0}
     - target: {fileID: 1785532945335078786, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.00894544e-11
+      value: -0.000000005961545
       objectReference: {fileID: 0}
     - target: {fileID: 1785532945335078786, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39765,6 +39765,22 @@ PrefabInstance:
     - target: {fileID: 1785532945335078786, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099064486984469287, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
+      propertyPath: Orbits.Top.Radius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099064486984469287, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
+      propertyPath: Orbits.Bottom.Radius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099064486984469287, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
+      propertyPath: Orbits.Center.Height
+      value: 3.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099064486984469287, guid: aa92bd9f45f67f44fb1c9e8dec009e8c, type: 3}
+      propertyPath: Orbits.Center.Radius
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
