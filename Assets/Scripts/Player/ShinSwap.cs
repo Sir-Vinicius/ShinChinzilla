@@ -48,4 +48,29 @@ public class ShinSwap : MonoBehaviour
             Debug.Log("Transformação feita");
         }
     }
+
+    public void ReturnToBall()
+    {
+        if (chinchillaRb == null) return;
+
+        hasSwapped = false;
+
+        if (playerController != null)
+            playerController.enabled = false;
+
+        if (tailAttack != null)
+            tailAttack.enabled = false;
+
+        if (chinchillaObject != null)
+            chinchillaObject.SetActive(false);
+
+        if (ballObject != null)
+            ballObject.SetActive(true);
+
+        chinchillaRb.linearVelocity = Vector3.zero;
+        chinchillaRb.angularVelocity = Vector3.zero;
+        chinchillaRb.useGravity = false;
+
+        Debug.Log("Chinchila retornou à forma de bola.");
+    }
 }

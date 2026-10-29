@@ -61,9 +61,66 @@ public class CannonLauncher : MonoBehaviour
         cannonInput.Cannon.Aim.canceled += ctx => aimInput = Vector2.zero;
     }
 
-    private void OnEnable() => cannonInput.Enable();
+    private void OnEnable()
+    {
+        cannonInput.Enable();
 
-    private void OnDisable() => cannonInput.Disable();
+        if (gameManager != null)
+            gameManager.AttemptEnded += OnAttemptEnded;
+    }
+
+    private void OnDisable()
+    {
+        cannonInput.Disable();
+
+        if (gameManager != null)
+            gameManager.AttemptEnded -= OnAttemptEnded;
+    }
+
+    private void OnAttemptEnded()
+    {
+        if (chinchillaRb == null || launchPoint == null)
+        {
+            Debug.LogError(
+                "Rigidbody da chinchila ou Launch Point não configurado."
+            );
+            return;
+        }
+
+        // Interrompe o movimento e retorna à posição inicial.
+        chinchillaRb.linearVelocity = Vector3.zero;
+        chinchillaRb.angularVelocity = Vector3.zero;
+        chinchillaRb.useGravity = false;
+
+        // Retorna à forma de bola.
+        ShinSwap shinSwap = chinchillaRb.GetComponent<ShinSwap>();
+
+        if (shinSwap != null)
+            shinSwap.ReturnToBall();
+
+        if (ballObject != null)
+            ballObject.SetActive(false);
+
+        // Retorna à câmera do canhão.
+        CameraController cameraController =
+            chinchillaRb.GetComponent<CameraController>();
+
+        if (cameraController != null)
+            cameraController.ReturnToCannonCamera();
+
+        // Prepara o próximo lançamento.
+        currentForce = minForce;
+        currentState = CannonState.Aiming;
+        shouldLaunch = false;
+
+        if (powerSlider != null)
+            powerSlider.gameObject.SetActive(false);
+
+        if (lineRenderer != null)
+            lineRenderer.positionCount = 0;
+
+        Debug.Log("Canhão pronto para a próxima tentativa.");
+    }
 
     void Start()
     {

@@ -25,6 +25,9 @@ public class CameraController : MonoBehaviour
     public bool hasLanded = false; //Verifica se já pousou
     private bool isTransitioning = false; //Controla se está no meio da transição de câmeras
 
+    [Header("Gerenciamento da partida")]
+    [SerializeField] private GameManager gameManager;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -105,8 +108,34 @@ public class CameraController : MonoBehaviour
         isTransitioning = true;
         hasLanded = true;
 
-        shinSwap.Swap();
-        //Ativa script de movimento, etc
+        shinSwap.Swap(); //Ativa script de movimento, etc
+
+        if (gameManager != null)
+        {
+            gameManager.StartGroundTimer();
+        }
+        else
+        {
+            Debug.LogError(
+                "GameManager não foi atribuído no CameraController."
+            );
+        }
     }
 
+    public void ReturnToCannonCamera()
+    {
+        hasLanded = false;
+        isTransitioning = false;
+
+        if (flightCamera != null)
+            flightCamera.SetActive(false);
+
+        if (gameplayCamera != null)
+            gameplayCamera.SetActive(false);
+
+        if (cannonCamera != null)
+            cannonCamera.SetActive(true);
+
+        Debug.Log("Câmera retornou ao canhão.");
+    }
 }
