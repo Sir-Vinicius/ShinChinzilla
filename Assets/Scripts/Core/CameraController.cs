@@ -131,13 +131,13 @@ private void OnCollisionEnter(Collision collision)
         isTransitioning = false;
 
         if (flightCamera != null)
-            flightCamera.SetActive(false);
+            flightCamera.gameObject.SetActive(false);
 
         if (gameplayCamera != null)
-            gameplayCamera.SetActive(false);
+            gameplayCamera.gameObject.SetActive(false);
 
         if (cannonCamera != null)
-            cannonCamera.SetActive(true);
+            cannonCamera.gameObject.SetActive(true);
 
         Debug.Log("Câmera retornou ao canhão.");
     }
