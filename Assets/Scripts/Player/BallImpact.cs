@@ -1,6 +1,6 @@
 using System;
 using Unity.VisualScripting;
-using UnityEditor.Search;
+
 using UnityEngine;
 
 public class BallImpact : MonoBehaviour
@@ -10,7 +10,16 @@ public class BallImpact : MonoBehaviour
     [SerializeField] private float explosionRadius = 3f;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("Configuração de Paredes Invisíveis (Wall)")]
+    [SerializeField] private float wallBounceForce = 15f;
+
     private bool hasImpacted = false;
+    private Rigidbody rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -29,6 +38,13 @@ public class BallImpact : MonoBehaviour
         {
             ApplyImpactToBlocks(collision);
             Debug.Log("Impacto detectado com o bloco");
+        }
+
+        //Verificação para ricochete na parede invisível
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            ApplyWallBounce(collision);
+            Debug.Log("Impacto detectado com a parede");
         }
     }
 
@@ -57,6 +73,24 @@ public class BallImpact : MonoBehaviour
                     destructible.BreakBlock();
                 }
             }            
+        }
+    }
+
+    void ApplyWallBounce(Collision collision)
+    {
+        if (rb != null && collision.contacts.Length > 0)
+        {
+            //Pega a direção normal da parede
+            Vector3 bounceDirection = collision.contacts[0].normal;
+
+            //Leve toque para cima
+            bounceDirection += Vector3.up * 0.2f;
+
+            //Zera a velocidade atual para o impulso ser consistente
+            rb.linearVelocity = Vector3.zero;
+
+            //Aplica a força de impulso no sentido oposto à parede
+            rb.AddForce(bounceDirection.normalized * wallBounceForce, ForceMode.Impulse);
         }
     }
 }

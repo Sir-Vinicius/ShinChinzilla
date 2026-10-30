@@ -142,9 +142,9 @@ MonoBehaviour:
   minHorizontalAngle: -45
   maxHorizontalAngle: 45
   chinchillaInitialMass: 0.65
-  minForce: 4
-  maxForce: 20
-  chargeSpeed: 5
+  minForce: 3
+  maxForce: 10
+  chargeSpeed: 3
   trajectoryPointCount: 30
   timeStep: 0.1
   powerSlider: {fileID: 0}
