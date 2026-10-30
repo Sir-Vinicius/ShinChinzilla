@@ -1,10 +1,13 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DestructibleBlock : MonoBehaviour
 {
+    public static event Action<DestructibleBlock> Destroyed;
+
     [Header("Configurações")]
+    [SerializeField] private float destroyDelay = 3f;
+    [SerializeField, Min(0)] private int points = 5;
     [SerializeField] private float destroyDelay = 2.5f;
     [SerializeField] private float minImpactVelocityToBreak = 4.0f;
     private bool isBroken = false;
@@ -15,6 +18,9 @@ public class DestructibleBlock : MonoBehaviour
         //Registra o momento exato em que o bloco nasceu
         spawnTime = Time.time;
     }
+
+    public int Points => points;
+    public bool IsBroken => isBroken;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -37,7 +43,12 @@ public class DestructibleBlock : MonoBehaviour
     public void BreakBlock()
     {
         if (isBroken) return;
+
         isBroken = true;
+
+        Debug.Log($"Destruição registrada em {gameObject.name}");
+
+        Destroyed?.Invoke(this);
 
         //Adicionar VFX depois
         //Instantiate(particlesPrefab, transform.position, Quaternion.identity);

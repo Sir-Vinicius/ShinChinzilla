@@ -20,6 +20,7 @@ public class CannonLauncher : MonoBehaviour
     [SerializeField] private LineRenderer lineRenderer; //Linha da trajetória
     public CannonState currentState = CannonState.Aiming;
 
+    [SerializeField] private GameManager gameManager;
 
     [Header("Configurações de Mira")]
     [SerializeField] private float horinzontalSpeed = 35f;
@@ -60,9 +61,66 @@ public class CannonLauncher : MonoBehaviour
         cannonInput.Cannon.Aim.canceled += ctx => aimInput = Vector2.zero;
     }
 
-    private void OnEnable() => cannonInput.Enable();
+    private void OnEnable()
+    {
+        cannonInput.Enable();
 
-    private void OnDisable() => cannonInput.Disable();
+        if (gameManager != null)
+            gameManager.AttemptEnded += OnAttemptEnded;
+    }
+
+    private void OnDisable()
+    {
+        cannonInput.Disable();
+
+        if (gameManager != null)
+            gameManager.AttemptEnded -= OnAttemptEnded;
+    }
+
+    private void OnAttemptEnded()
+    {
+        if (chinchillaRb == null || launchPoint == null)
+        {
+            Debug.LogError(
+                "Rigidbody da chinchila ou Launch Point não configurado."
+            );
+            return;
+        }
+
+        // Interrompe o movimento e retorna à posição inicial.
+        chinchillaRb.linearVelocity = Vector3.zero;
+        chinchillaRb.angularVelocity = Vector3.zero;
+        chinchillaRb.useGravity = false;
+
+        // Retorna à forma de bola.
+        ShinSwap shinSwap = chinchillaRb.GetComponent<ShinSwap>();
+
+        if (shinSwap != null)
+            shinSwap.ReturnToBall();
+
+        if (ballObject != null)
+            ballObject.SetActive(false);
+
+        // Retorna à câmera do canhão.
+        CameraController cameraController =
+            chinchillaRb.GetComponent<CameraController>();
+
+        if (cameraController != null)
+            cameraController.ReturnToCannonCamera();
+
+        // Prepara o próximo lançamento.
+        currentForce = minForce;
+        currentState = CannonState.Aiming;
+        shouldLaunch = false;
+
+        if (powerSlider != null)
+            powerSlider.gameObject.SetActive(false);
+
+        if (lineRenderer != null)
+            lineRenderer.positionCount = 0;
+
+        Debug.Log("Canhão pronto para a próxima tentativa.");
+    }
 
     void Start()
     {
@@ -175,6 +233,14 @@ public class CannonLauncher : MonoBehaviour
     {
         if (currentState != CannonState.Charging) return;
 
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager não foi atribuído no CannonLauncher.");
+            return;
+        }
+
+        if (!gameManager.StartAttempt()) return;
+
         currentState = CannonState.Launched;
 
         //Limpa e some com a linha de trajetória ao atirar
@@ -199,6 +265,10 @@ public class CannonLauncher : MonoBehaviour
             //Reseta  para garantir precisão absoluta
             chinchillaRb.linearVelocity = Vector3.zero;
             chinchillaRb.angularVelocity = Vector3.zero;
+
+            // Restaura a massa inicial para garantir que o impulso do canhão
+            // produza a velocidade esperada em todas as tentativas.
+            chinchillaRb.mass = chinchillaInitialMass;
 
             //Usa a direção para onde launchPoint está apontando
             Vector3 launchDirection = (launchPoint.forward + Vector3.up * 0.6f).normalized;
