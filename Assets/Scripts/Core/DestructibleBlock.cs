@@ -8,7 +8,6 @@ public class DestructibleBlock : MonoBehaviour
     [Header("Configurações")]
     [SerializeField] private float destroyDelay = 3f;
     [SerializeField, Min(0)] private int points = 5;
-    [SerializeField] private float destroyDelay = 2.5f;
     [SerializeField] private float minImpactVelocityToBreak = 4.0f;
     private bool isBroken = false;
     private float spawnTime;
