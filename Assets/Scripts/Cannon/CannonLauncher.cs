@@ -266,6 +266,10 @@ public class CannonLauncher : MonoBehaviour
             chinchillaRb.linearVelocity = Vector3.zero;
             chinchillaRb.angularVelocity = Vector3.zero;
 
+            // Restaura a massa inicial para garantir que o impulso do canhão
+            // produza a velocidade esperada em todas as tentativas.
+            chinchillaRb.mass = chinchillaInitialMass;
+
             //Usa a direção para onde launchPoint está apontando
             Vector3 launchDirection = (launchPoint.forward + Vector3.up * 0.6f).normalized;
      

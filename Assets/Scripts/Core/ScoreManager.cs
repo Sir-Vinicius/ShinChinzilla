@@ -16,9 +16,12 @@ public class ScoreManager : MonoBehaviour
     public int InitialObjectCount => initialObjectCount;
     public int DestructionGoal => destructionGoal;
 
+    // Calcula o progresso em porcentagem, limitado ao intervalo de 0% a 100%.
+    // Se não houver uma meta válida, retorna 0%.
     public float DestructionProgress =>
         destructionGoal > 0 ? Mathf.Clamp01((float)destroyedObjects / destructionGoal) * 100f: 0f;
 
+    // Quantidade de estrelas obtidas com base no progresso da destruição.
     public int EarnedStars =>
         DestructionProgress >= 80f ? 3 :
         DestructionProgress >= 60f ? 2 :
@@ -26,6 +29,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
+        // Registra a quantidade inicial de objetos antes de começar a partida.
         CountInitialObjects();
     }
 
@@ -42,6 +46,7 @@ public class ScoreManager : MonoBehaviour
 
     private void CountInitialObjects()
     {
+        // Localiza todos os objetos destrutíveis existentes na cena.
         DestructibleBlock[] blocks =
             FindObjectsByType<DestructibleBlock>(
                 FindObjectsSortMode.None
@@ -49,6 +54,8 @@ public class ScoreManager : MonoBehaviour
 
         initialObjectCount = blocks.Length;
 
+        // Calcula quantos objetos precisam ser destruídos para atingir a meta configurada.
+        // CeilToInt arredonda para cima quando o resultado não é um número inteiro.
         destructionGoal = Mathf.CeilToInt(
             initialObjectCount * destructionTarget
         );
@@ -61,7 +68,7 @@ public class ScoreManager : MonoBehaviour
 
     private void RegisterDestruction(DestructibleBlock block)
     {
-        Debug.Log($"ScoreManager recebeu destruição: {block.name}");
+        // Adiciona os pontos definidos no objeto destruído e atualiza a contagem.
         totalScore += block.Points;
         destroyedObjects++;
 

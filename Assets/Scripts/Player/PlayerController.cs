@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
