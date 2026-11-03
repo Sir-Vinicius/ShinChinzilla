@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Test/AlefLevel.unity
     guid: 10a0664807b293f45a91023b57094e22
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test/BrendoCamera.unity
     guid: 7a7a4ca4075da2d47b0f23dd21f4fee9
   - enabled: 1
