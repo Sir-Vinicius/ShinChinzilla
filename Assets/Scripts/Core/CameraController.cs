@@ -41,8 +41,11 @@ public class CameraController : MonoBehaviour
         hasLanded = false;
         isTransitioning = false;
 
+        flightCamera.gameObject.SetActive(true);
+
         flightCamera.Priority = 20; //Prioridade maior para a câmera de voo
         cannonCamera.Priority = 10; //Prioridade menor para a câmera do canhão
+        gameplayCamera.Priority = 10; //Prioridade menor para a câmera de gameplay
 
         /* //Ativa a câmera de voo e desativa a do canhão
          if (flightCamera != null) flightCamera.SetActive(true);
@@ -130,15 +133,9 @@ private void OnCollisionEnter(Collision collision)
         hasLanded = false;
         isTransitioning = false;
 
-        if (flightCamera != null)
-            flightCamera.SetActive(false);
-
-        if (gameplayCamera != null)
-            gameplayCamera.SetActive(false);
-
-        if (cannonCamera != null)
-            cannonCamera.SetActive(true);
-
-        Debug.Log("Câmera retornou ao canhão.");
+        // Retorna a prioridade para a câmera do canhão.
+        cannonCamera.Priority = 20;
+        flightCamera.Priority = 10;
+        gameplayCamera.Priority = 10;
     }
 }

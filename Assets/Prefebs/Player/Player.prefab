@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d69378cdde8e349884af44b35341b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  myRB: {fileID: 0}
+  myRB: {fileID: 5585511618985725407}
   myCamera: {fileID: 0}
   myAnimator: {fileID: 1994668916514151529}
   vel: 5
@@ -596,6 +596,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  wallBounceForce: 4
 --- !u!114 &931239246894410336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,6 +621,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   hasLanded: 0
+  gameManager: {fileID: 0}
 --- !u!114 &6405854713752137426
 MonoBehaviour:
   m_ObjectHideFlags: 0

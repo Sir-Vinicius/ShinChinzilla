@@ -52,6 +52,10 @@ public class CannonLauncher : MonoBehaviour
     private Vector2 aimInput;
     private bool shouldLaunch = false; //Bool para sincronizar o tiro com a física
 
+    private const float LaunchDelay = 2f; // Tempo de espera antes de permitir um novo lançamento.
+
+    private float launchUnlockTime = 0f; // Momento em que os comandos do canhão serão liberados.
+
     void Awake()
     {
         cannonInput = new CannonInput();
@@ -119,6 +123,8 @@ public class CannonLauncher : MonoBehaviour
         if (lineRenderer != null)
             lineRenderer.positionCount = 0;
 
+        launchUnlockTime = Time.time + LaunchDelay; // Impede novos comandos durante a preparação da próxima tentativa.
+
         Debug.Log("Canhão pronto para a próxima tentativa.");
     }
 
@@ -148,6 +154,12 @@ public class CannonLauncher : MonoBehaviour
 
     void Update()
     {
+        // Aguarda o período de preparação antes de aceitar comandos.
+        if (Time.time < launchUnlockTime)
+        {
+            return;
+        }
+
         if (currentState == CannonState.Aiming && cannonInput.Cannon.ChargeAndLaunch.WasPressedThisFrame())
         {
             StartCharging();
