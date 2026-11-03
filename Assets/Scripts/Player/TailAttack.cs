@@ -19,6 +19,9 @@ public class TailAttack : MonoBehaviour
     [SerializeField] private Transform groundCheckPoint; //Ponto base nos pés da chinchila
     [SerializeField] private float groundCheckRadius = 0.4f; //Esfera de checagem do chão
 
+    [Header("Animação")]
+    [SerializeField] private Animator animator;
+
 
     private Rigidbody rb;
     private InputSystem_Actions playerInput;
@@ -29,6 +32,8 @@ public class TailAttack : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerInput = new InputSystem_Actions();
         impulseSource = GetComponent<CinemachineImpulseSource>();
+
+        if (animator == null) animator = GetComponentInChildren<Animator>();
 
         playerInput.Player.TailAttack.performed += ctx => PerformTailAttack();
     }
@@ -42,6 +47,12 @@ public class TailAttack : MonoBehaviour
         if (!isGrounded()) return; //Checa se está no chão
 
         nextAttackTime = Time.time + attackCooldown;
+
+        //Chama animação de ataque
+        if (animator != null)
+        {
+            animator.SetTrigger("Attack");
+        }
 
         Vector3 attackCenter = transform.position;
 
