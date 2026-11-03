@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Test/BrendoCamera.unity
     guid: 7a7a4ca4075da2d47b0f23dd21f4fee9
   - enabled: 1
+    path: Assets/Scenes/Test/Menu_Teste2.unity
+    guid: 758f440b8f4e35d4b9cbb290986fa7b0
+  - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: e17fdfbebe8291745ae475ed98d86dcc
   m_configObjects:
