@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     private int lastLoggedSecond = -1;
 
     public event Action AttemptEnded;
+    public event Action AttemptStarted;
+    public event Action<bool> GameFinished;
 
     public int AttemptsUsed => attemptsUsed;
     public int AttemptsRemaining => maxAttempts - attemptsUsed;
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     public float RemainingAttemptTime => remainingAttemptTime;
     public bool IsAttemptTimerRunning => attemptTimerRunning;
+    public float AttemptDuration => attemptDuration;
 
     private void Update()
     {
@@ -94,6 +97,7 @@ public class GameManager : MonoBehaviour
         // Registra a nova tentativa e atualiza o estado da partida.
         attemptsUsed++;
         currentState = GameState.InAttempt;
+        AttemptStarted?.Invoke();
 
         Debug.Log(
             $"Tentativa {attemptsUsed}/{maxAttempts} iniciada."
@@ -181,5 +185,7 @@ public class GameManager : MonoBehaviour
             victory ? "Fase concluída: VITÓRIA!" :
                       "Fase concluída: DERROTA!"
         );
+
+        GameFinished?.Invoke(victory);
     }
 }
