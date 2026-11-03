@@ -112,6 +112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bloquinhos brinquedo
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
+      propertyPath: m_TagString
+      value: Block
+      objectReference: {fileID: 0}
     - target: {fileID: 2399045990229188718, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
       propertyPath: m_TagString
       value: Block
@@ -408,6 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &953749498241548654
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -474,6 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &6061711691972004122
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -567,6 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!1 &807280891415217594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2399045990229188718, guid: 296c43b61510d0d49b969e70a895c98c, type: 3}
@@ -606,6 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &3861987887147086058
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -672,6 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &6915426476352725582
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -738,6 +747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &8862466028912100554
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -804,6 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &5330021932546618193
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -870,6 +881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &1652462802888970834
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -936,6 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &8091953692519877591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1002,6 +1015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &4019777516708657486
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1068,6 +1082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &3963850689820823745
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1134,6 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &4419981132734350203
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1200,6 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &4685723914614415675
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1266,6 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &2892796371070283025
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1332,6 +1350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &663124871074681812
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1398,6 +1417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &2762802870317108678
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1464,6 +1484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &5870461479808241906
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1530,6 +1551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &4554420813369440976
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1596,6 +1618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &2589748925896573667
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1662,6 +1685,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &5741168373859597320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1728,6 +1752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &817121206764622990
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1794,6 +1819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &1995080436433430347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1860,6 +1886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &7607552092274120689
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1926,6 +1953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
+  minImpactVelocityToBreak: 4
 --- !u!54 &2562913047860780819
 Rigidbody:
   m_ObjectHideFlags: 0

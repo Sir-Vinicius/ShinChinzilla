@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4791357873592463684}
   m_Layer: 0
   m_Name: torre_alta_vermelha
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3560382656471171940, guid: 9dad4958d407bc241972a5acf252349f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.459999
+      value: 2.288
       objectReference: {fileID: 0}
     - target: {fileID: 3560382656471171940, guid: 9dad4958d407bc241972a5acf252349f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1880832664817644378, guid: 2d095f3bffb6cee47bcbcb2d0f51c4fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.519999
+      value: 2.298
       objectReference: {fileID: 0}
     - target: {fileID: 1880832664817644378, guid: 2d095f3bffb6cee47bcbcb2d0f51c4fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -267,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2963203319893260747, guid: db521307a194119438fe30c677702141, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86299926
+      value: 0.764
       objectReference: {fileID: 0}
     - target: {fileID: 2963203319893260747, guid: db521307a194119438fe30c677702141, type: 3}
       propertyPath: m_LocalPosition.z

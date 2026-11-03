@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed)
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(myRB.angularVelocity);
+        //Debug.Log(myRB.angularVelocity);
 
         var forward = myCamera.TransformDirection(Vector3.forward);
         forward.y = 0;

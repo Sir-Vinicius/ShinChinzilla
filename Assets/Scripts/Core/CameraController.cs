@@ -26,6 +26,9 @@ public class CameraController : MonoBehaviour
     public bool hasLanded = false; //Verifica se já pousou
     private bool isTransitioning = false; //Controla se está no meio da transição de câmeras
 
+    [Header("Gerenciamento da partida")]
+    [SerializeField] private GameManager gameManager;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -38,8 +41,11 @@ public class CameraController : MonoBehaviour
         hasLanded = false;
         isTransitioning = false;
 
+        flightCamera.gameObject.SetActive(true);
+
         flightCamera.Priority = 20; //Prioridade maior para a câmera de voo
         cannonCamera.Priority = 10; //Prioridade menor para a câmera do canhão
+        gameplayCamera.Priority = 10; //Prioridade menor para a câmera de gameplay
 
         /* //Ativa a câmera de voo e desativa a do canhão
          if (flightCamera != null) flightCamera.SetActive(true);
@@ -108,8 +114,28 @@ private void OnCollisionEnter(Collision collision)
         isTransitioning = true;
         hasLanded = true;
 
-        shinSwap.Swap();
-        //Ativa script de movimento, etc
+        shinSwap.Swap(); //Ativa script de movimento, etc
+
+        if (gameManager != null)
+        {
+            gameManager.StartGroundTimer();
+        }
+        else
+        {
+            Debug.LogError(
+                "GameManager não foi atribuído no CameraController."
+            );
+        }
     }
 
+    public void ReturnToCannonCamera()
+    {
+        hasLanded = false;
+        isTransitioning = false;
+
+        // Retorna a prioridade para a câmera do canhão.
+        cannonCamera.Priority = 20;
+        flightCamera.Priority = 10;
+        gameplayCamera.Priority = 10;
+    }
 }

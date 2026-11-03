@@ -135,16 +135,17 @@ MonoBehaviour:
   barrelTransform: {fileID: 5660995553097566433}
   lineRenderer: {fileID: 9039156561940717208}
   currentState: 0
+  gameManager: {fileID: 0}
   horinzontalSpeed: 45
   verticalSpeed: 45
   minVerticalAngle: 15
   maxVerticalAngle: 75
-  minHorizontalAngle: -45
-  maxHorizontalAngle: 45
+  minHorizontalAngle: -60
+  maxHorizontalAngle: 60
   chinchillaInitialMass: 0.65
   minForce: 3
-  maxForce: 10
-  chargeSpeed: 3
+  maxForce: 12
+  chargeSpeed: 3.5
   trajectoryPointCount: 30
   timeStep: 0.1
   powerSlider: {fileID: 0}
