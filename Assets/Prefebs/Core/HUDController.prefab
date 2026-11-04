@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5078718505170257335}
-  - component: {fileID: 8275558911207906200}
+  - component: {fileID: 9208256893361186309}
   m_Layer: 0
   m_Name: HUDController
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8275558911207906200
+--- !u!114 &9208256893361186309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,10 +49,7 @@ MonoBehaviour:
   gameplayHUD: {fileID: 0}
   timerText: {fileID: 0}
   scoreText: {fileID: 0}
-  stars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  stars: []
   resultPanel: {fileID: 0}
   victoryBackground: {fileID: 0}
   defeatBackground: {fileID: 0}
