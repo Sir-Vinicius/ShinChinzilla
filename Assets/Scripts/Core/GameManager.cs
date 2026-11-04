@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private float delay = 3f;
+    private bool isGameFinished = false;
+
+    public PlayerInput playerInput;
+    public TailAttack tailAttack;
+
     // Estados
     public enum GameState
     {
@@ -45,8 +51,39 @@ public class GameManager : MonoBehaviour
     public bool IsAttemptTimerRunning => attemptTimerRunning;
     public float AttemptDuration => attemptDuration;
 
+    private void Awake()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (playerInput == null)
+        {
+            playerInput = player.GetComponent<PlayerInput>();
+        }
+        if (tailAttack == null)
+        {
+            tailAttack = player.GetComponent<TailAttack>();
+        }
+    }
+
     private void Update()
     {
+        Debug.Log(delay);
+
+        if(isGameFinished)
+        {
+            // Delay para ir para a tela de resultado
+            attemptDuration = 0f;
+            delay -= Time.deltaTime;
+            playerInput.DeactivateInput();
+            tailAttack.enabled = false;
+
+
+            if (delay <= 0f)
+            {
+                EndAttempt();
+            }
+
+        }
+
         // Atualiza o timer da tentativa apenas quando a partida está em andamento.
         if (!attemptTimerRunning || currentState != GameState.InAttempt)
         {
@@ -146,8 +183,8 @@ public class GameManager : MonoBehaviour
 
             // A partida é vencida quando o progresso alcança pelo menos 40%.
             bool victory = scoreManager.DestructionProgress >= 40f;
-
-            FinishGame(victory);
+            isGameFinished = true;
+            if (delay <= 0f) FinishGame(victory);
             return;
         }
 
@@ -174,18 +211,20 @@ public class GameManager : MonoBehaviour
         // Interrompe o temporizador e registra o resultado final.
         attemptTimerRunning = false;
 
-        currentState = victory
-            ? GameState.Victory
-            : GameState.Defeat;
+        
+            currentState = victory
+                ? GameState.Victory
+                : GameState.Defeat;
 
-        // Pausa o tempo do jogo após definir o resultado.
-        Time.timeScale = 0f;
+            // Pausa o tempo do jogo após definir o resultado.
+            Time.timeScale = 0f;
 
-        Debug.Log(
-            victory ? "Fase concluída: VITÓRIA!" :
-                      "Fase concluída: DERROTA!"
-        );
+            Debug.Log(
+                victory ? "Fase concluída: VITÓRIA!" :
+                          "Fase concluída: DERROTA!"
+            );
 
-        GameFinished?.Invoke(victory);
+            GameFinished?.Invoke(victory);
+             
     }
 }
