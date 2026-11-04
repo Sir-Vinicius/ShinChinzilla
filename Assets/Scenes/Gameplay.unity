@@ -38170,45 +38170,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 171995684865742560, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006741296972353785, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1006741296972353785, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ExitGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 1920519056348772598, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1920519056348772598, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2432746991323616541, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2688106053092259446, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2729983634690635132, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3931771717842630019, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3931771717842630019, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartLevel
       objectReference: {fileID: 0}
     - target: {fileID: 5775367656624148402, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
       propertyPath: m_Pivot.x
@@ -38289,10 +38253,6 @@ PrefabInstance:
     - target: {fileID: 5775367656624148402, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8085682922359067038, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -81279,7 +81239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1714317362
 Transform:
   m_ObjectHideFlags: 0

@@ -131,9 +131,6 @@ public class HUDController : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        // Quando tiver a scene de main menu, carregar ela.
-        // SceneManager.LoadScene("MainMenu");
-
-        Application.Quit();
+        SceneManager.LoadScene("Menu_Teste2");
     }
 }
