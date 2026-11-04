@@ -637,9 +637,17 @@ PrefabInstance:
       value: MainMenuManager
       objectReference: {fileID: 0}
     - target: {fileID: 493620433435465315, guid: 83fbae873a842d941af44fe9dccf2c9f, type: 3}
+      propertyPath: gameScene
+      value: Cutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 493620433435465315, guid: 83fbae873a842d941af44fe9dccf2c9f, type: 3}
       propertyPath: creditsPanel
       value: 
       objectReference: {fileID: 764245207}
+    - target: {fileID: 493620433435465315, guid: 83fbae873a842d941af44fe9dccf2c9f, type: 3}
+      propertyPath: cutsceneName
+      value: Cutscene
+      objectReference: {fileID: 0}
     - target: {fileID: 493620433435465315, guid: 83fbae873a842d941af44fe9dccf2c9f, type: 3}
       propertyPath: optionsPanel
       value: 

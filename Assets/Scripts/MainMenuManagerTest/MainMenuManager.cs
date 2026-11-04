@@ -4,8 +4,8 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [Header("Game")]
-    [SerializeField] private string gameScene;
+    [Header("Cena Jogar")]
+    [SerializeField] private string cutsceneName;
 
     [Header("Panels")]
     [SerializeField] private GameObject mainMenuPanel;
@@ -30,7 +30,7 @@ public class MainMenuManager : MonoBehaviour
     public void Play()
     {
         //Seleção jogar
-        SceneManager.LoadScene(gameScene);
+        SceneManager.LoadScene(cutsceneName);
     }
 
     public void OpenOptions()
