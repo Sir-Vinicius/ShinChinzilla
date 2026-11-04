@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class CannonLauncher : MonoBehaviour
 {
-    public enum CannonState {  Aiming, Charging, Launched}
+    public enum CannonState { Aiming, Charging, Launched }
 
     [Header("Referêncas")]
     [SerializeField] private GameObject ballObject;
@@ -136,9 +136,11 @@ public class CannonLauncher : MonoBehaviour
         if (chinchillaRb != null) chinchillaRb.mass = chinchillaInitialMass;
         else Debug.LogError("Objeto da bola não encontrado.");
 
-        currentHorizontalAngle = transform.eulerAngles.y;
-
-        if (barrelTransform != null) currentVerticalAngle = barrelTransform.localEulerAngles.x;
+        if (barrelTransform != null)
+        {
+            currentHorizontalAngle = barrelTransform.localEulerAngles.y;
+            currentVerticalAngle = barrelTransform.localEulerAngles.z;
+        }
         else Debug.LogError("Transform do tubo do canhão não encontrado.");
 
         //Esconde (e configura)a barra de força no início da partida
@@ -198,17 +200,18 @@ public class CannonLauncher : MonoBehaviour
 
     void HandleAiming()
     {
-        //A/D alteram currentHorizontalAngle (gira o corpo do tanque para os lados)
+        //A/D alteram currentHorizontalAngle (gira no eixo Y - Horizontal)
         currentHorizontalAngle += aimInput.x * horinzontalSpeed * Time.deltaTime;
         currentHorizontalAngle = Mathf.Clamp(currentHorizontalAngle, minHorizontalAngle, maxHorizontalAngle);
-        transform.rotation = Quaternion.Euler(0f, currentHorizontalAngle, 0f);
 
-        //W/S alteram currentVerticalAngle (gira o tubo do canhão para cima e para baixo)
+        //W/S alteram currentVerticalAngle (gira no eixo Z - Vertical)
         if (barrelTransform != null)
         {
-        currentVerticalAngle -= aimInput.y * verticalSpeed * Time.deltaTime;
-        currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, minVerticalAngle, maxVerticalAngle);
-        barrelTransform.localRotation = Quaternion.Euler(currentVerticalAngle, 0f, 0f);
+            currentVerticalAngle -= aimInput.y * verticalSpeed * Time.deltaTime;
+            currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, minVerticalAngle, maxVerticalAngle);
+
+            //Aplica a rotação combinada mantendo o eixo X travado em 0 (ou ajusta se necessário) e movendo Y e Z
+            barrelTransform.localRotation = Quaternion.Euler(0f, currentHorizontalAngle, currentVerticalAngle);
         }
     }
 
