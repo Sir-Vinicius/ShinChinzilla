@@ -49,9 +49,17 @@ public class DestructibleBlock : MonoBehaviour
 
         Destroyed?.Invoke(this);
 
-        //Adicionar VFX depois
-        //Instantiate(particlesPrefab, transform.position, Quaternion.identity);
+        Invoke(nameof(SpawnBreakVFX), destroyDelay);
 
         Destroy(gameObject, destroyDelay);
+    }
+
+    private void SpawnBreakVFX()
+    {
+        //Chama o VFX do bloco quebrando (índice 1 no VFXManager)
+        if (VFXManager.Instance != null)
+        {
+            VFXManager.Instance.PlayVFX(1, transform.position, Quaternion.identity);
+        }
     }
 }

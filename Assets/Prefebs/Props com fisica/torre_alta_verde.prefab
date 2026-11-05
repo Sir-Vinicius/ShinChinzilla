@@ -94,6 +94,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Block
       objectReference: {fileID: 0}
+    - target: {fileID: 7321565281838911765, guid: 682d0da4a2a87be44aab0309a99e1982, type: 3}
+      propertyPath: m_Mass
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
