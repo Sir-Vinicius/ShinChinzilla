@@ -264,6 +264,9 @@ public class CannonLauncher : MonoBehaviour
         //Esconde a barra de força após o disparo
         if (powerSlider != null) powerSlider.gameObject.SetActive(false);
 
+        //Chama o VFX
+        VFXManager.Instance.PlayVFX(3, launchPoint.position, Quaternion.identity);
+
         if (ballObject != null)
         {          
             //Ativa a bola
