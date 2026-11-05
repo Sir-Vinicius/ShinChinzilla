@@ -115,10 +115,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Block
       objectReference: {fileID: 0}
-    - target: {fileID: 5353867065201553578, guid: b158beb47c681d64db7cc5920a83440f, type: 3}
-      propertyPath: m_Mass
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8703909007304859769, guid: b158beb47c681d64db7cc5920a83440f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.060975075

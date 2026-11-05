@@ -100,8 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestructibleBlock
   destroyDelay: 3
-  points: 5
-  minImpactVelocityToBreak: 4
 --- !u!65 &6539345605026168747
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -131,7 +129,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498021114911589912}
   serializedVersion: 5
-  m_Mass: 5
+  m_Mass: 3
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

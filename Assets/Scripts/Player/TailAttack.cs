@@ -49,13 +49,9 @@ public class TailAttack : MonoBehaviour
         nextAttackTime = Time.time + attackCooldown;
 
         //Chama animação de ataque
-        if (animator != null) animator.SetTrigger("Attack");
-
-        //Chama o VFX
-        if (VFXManager.Instance != null)
+        if (animator != null)
         {
-            VFXManager.Instance.PlayVFX(2, transform.position, Quaternion.identity);
-            Debug.Log("VFX spawnado");
+            animator.SetTrigger("Attack");
         }
 
         Vector3 attackCenter = transform.position;
