@@ -1,8 +1,9 @@
-using UnityEngine;
+using MoreMountains.Feedbacks;
 using System;
+using TMPro;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using MoreMountains.Feedbacks;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private float delay = 3f;
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public PlayerInput playerInput;
     public TailAttack tailAttack;
+    public TextMeshProUGUI launchText;
 
     [SerializeField] private MMF_Player victorySound;
     [SerializeField] private MMF_Player defeatSound;
@@ -69,9 +71,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
 
-        if(isGameFinished)
+        launchText.text = "Lançamento: " + (maxAttempts - attemptsUsed);
+        if (isGameFinished)
         {
             // Delay para ir para a tela de resultado
             attemptDuration = 0f;
