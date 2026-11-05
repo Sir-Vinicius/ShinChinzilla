@@ -22,7 +22,9 @@ public class HUDController : MonoBehaviour
     [SerializeField] private GameObject defeatBackground;
 
     [SerializeField] private TMP_Text finalScoreText;
-    [SerializeField] private TMP_Text finalStarsText;
+    
+    [Header("Estrelas do resultado")]
+    [SerializeField] private GameObject[] resultStars;
 
     private void OnEnable()
     {
@@ -112,10 +114,17 @@ public class HUDController : MonoBehaviour
         // Apresenta os valores finais da partida.
         finalScoreText.text = scoreManager.TotalScore.ToString();
 
+        UpdateResultStars();
+    }
+
+    private void UpdateResultStars()
+    {
         int earnedStars = scoreManager.EarnedStars;
 
-        finalStarsText.text = new string('*', earnedStars) +
-                              new string('-', 3 - earnedStars);
+        for (int i = 0; i < resultStars.Length; i++)
+        {
+            resultStars[i].SetActive(i < earnedStars);
+        }
     }
 
     public void RestartLevel()
