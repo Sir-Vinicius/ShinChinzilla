@@ -8,18 +8,28 @@ public class BlockPointsSpawner : MonoBehaviour
 
     [SerializeField] private MMF_Player pointsFeedback;
 
+    private MMF_FloatingText floatingText;
+
     private void Awake()
     {
         Instance = this;
+
+        if (pointsFeedback != null)
+        {
+            floatingText =
+                pointsFeedback.GetFeedbackOfType<MMF_FloatingText>();
+        }
     }
 
-    public void ShowPoints(Vector3 position)
+    public void ShowPoints(Vector3 position, int points)
     {
-        if (pointsFeedback == null)
+        if (pointsFeedback == null || floatingText == null)
         {
-            Debug.LogWarning("MMF_Player de pontos não configurado!");
+            Debug.LogWarning("MMF Floating Text não configurado no BlockPointsSpawner!");
             return;
         }
+
+        floatingText.Value = $"+{points}";
 
         pointsFeedback.PlayFeedbacks(position);
     }

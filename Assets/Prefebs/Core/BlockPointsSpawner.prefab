@@ -227,7 +227,7 @@ MonoBehaviour:
         Value: +5
         UseIntensityAsValue: 0
         RoundingMethod: 0
-        ForceColor: 0
+        ForceColor: 1
         AnimateColorGradient:
           serializedVersion: 2
           key0: {r: 0.14102328, g: 0.8773585, b: 0.028969401, a: 1}
@@ -260,7 +260,7 @@ MonoBehaviour:
           m_NumAlphaKeys: 2
         ForceLifetime: 1
         Lifetime: 1.2
-        PositionMode: 1
+        PositionMode: 2
         TargetTransform: {fileID: 0}
         Direction: {x: 0, y: 0, z: 0}
         AttachmentTransform: {fileID: 0}
