@@ -53,7 +53,10 @@ public class TailAttack : MonoBehaviour
         nextAttackTime = Time.time + attackCooldown;
 
         //Chama animação de ataque
-        if (animator != null)
+        if (animator != null) animator.SetTrigger("Attack");
+
+        //Chama o VFX
+        if (VFXManager.Instance != null)
         {
             animator.SetTrigger("Attack");
             
