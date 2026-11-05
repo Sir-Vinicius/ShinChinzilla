@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(delay);
+        
 
         if(isGameFinished)
         {
