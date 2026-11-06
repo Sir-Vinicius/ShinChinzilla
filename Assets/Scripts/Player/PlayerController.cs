@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using MoreMountains.Feedbacks;
-
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,10 +12,8 @@ public class PlayerController : MonoBehaviour
 
     public float vel = 5f;
     private bool isGrounded;
-    private bool isPlayingSteps = false;
     [SerializeField] private Transform footPlayer;
     [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private MMF_Player stepsSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,22 +27,14 @@ public class PlayerController : MonoBehaviour
 
         if (context.performed)
         {
-            if (!enabled) return;
-
             direction = context.ReadValue<Vector2>();
-            myAnimator.SetBool("Move", true);
-            if (!isPlayingSteps && direction.sqrMagnitude > 0.01f)
-            {
-                stepsSound.PlayFeedbacks();
-                isPlayingSteps = true;
-            }
+            myAnimator.SetBool("Move", true);  
         }
         else if (context.canceled)
         {
             direction = Vector2.zero;
             myAnimator.SetBool("Move", false);
-            stepsSound.StopFeedbacks();
-            isPlayingSteps = false;
+
         }
     }
 

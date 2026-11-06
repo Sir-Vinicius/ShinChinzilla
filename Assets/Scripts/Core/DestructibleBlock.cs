@@ -49,11 +49,6 @@ public class DestructibleBlock : MonoBehaviour
 
         Destroyed?.Invoke(this);
 
-        if (BlockPointsSpawner.Instance != null)
-        {
-            BlockPointsSpawner.Instance.ShowPoints(transform.position, points);
-        }
-
         Invoke(nameof(SpawnBreakVFX), destroyDelay);
 
         Destroy(gameObject, destroyDelay);

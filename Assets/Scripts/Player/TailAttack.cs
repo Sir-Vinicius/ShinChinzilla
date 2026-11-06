@@ -2,7 +2,6 @@ using System;
 using Unity.Cinemachine;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using MoreMountains.Feedbacks;
 
 public class TailAttack : MonoBehaviour
 {
@@ -22,9 +21,6 @@ public class TailAttack : MonoBehaviour
 
     [Header("Animação")]
     [SerializeField] private Animator animator;
-    
-    [Header("Sounds")]
-    [SerializeField] private MMF_Player attackSound;
 
 
     private Rigidbody rb;
@@ -58,10 +54,9 @@ public class TailAttack : MonoBehaviour
         //Chama o VFX
         if (VFXManager.Instance != null)
         {
-            animator.SetTrigger("Attack");
-            
+            VFXManager.Instance.PlayVFX(2, transform.position, Quaternion.identity);
+            Debug.Log("VFX spawnado");
         }
-        PlayAttackSound();
 
         Vector3 attackCenter = transform.position;
 
@@ -113,17 +108,5 @@ public class TailAttack : MonoBehaviour
         Gizmos.color = Color.green;
         Vector3 checkPosition = groundCheckPoint != null ? groundCheckPoint.position : transform.position;
         Gizmos.DrawWireSphere(checkPosition, groundCheckRadius);
-    }
-
-    public void PlayAttackSound()
-    {
-        
-
-        if (attackSound != null)
-        {
-           
-            attackSound.PlayFeedbacks();
-        }
-       
     }
 }
