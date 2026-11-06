@@ -49,9 +49,15 @@ MonoBehaviour:
   gameplayHUD: {fileID: 0}
   timerText: {fileID: 0}
   scoreText: {fileID: 0}
-  stars: []
+  stars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   resultPanel: {fileID: 0}
   victoryBackground: {fileID: 0}
   defeatBackground: {fileID: 0}
   finalScoreText: {fileID: 0}
-  finalStarsText: {fileID: 0}
+  resultStars:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
