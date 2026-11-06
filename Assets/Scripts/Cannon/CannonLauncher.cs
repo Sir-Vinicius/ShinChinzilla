@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
-
+using MoreMountains.Feedbacks;
 public class CannonLauncher : MonoBehaviour
 {
     public enum CannonState { Aiming, Charging, Launched }
@@ -19,6 +19,8 @@ public class CannonLauncher : MonoBehaviour
     [SerializeField] private Transform barrelTransform; //Tubo do canhão
     [SerializeField] private LineRenderer lineRenderer; //Linha da trajetória
     public CannonState currentState = CannonState.Aiming;
+    [SerializeField] private MMF_Player fireSound;
+    [SerializeField] private MMF_Player chargeSound;
 
     [SerializeField] private GameManager gameManager;
 
@@ -217,6 +219,7 @@ public class CannonLauncher : MonoBehaviour
 
     void StartCharging()
     {
+        chargeSound.PlayFeedbacks(); //Toca o som de carregamento
         if (currentState == CannonState.Aiming)
         {
             currentState = CannonState.Charging;
@@ -246,6 +249,7 @@ public class CannonLauncher : MonoBehaviour
 
     void LaunchChinchilla()
     {
+        chargeSound.StopFeedbacks(); //Para o som de carregamento
         if (currentState != CannonState.Charging) return;
 
         if (gameManager == null)
@@ -293,6 +297,8 @@ public class CannonLauncher : MonoBehaviour
      
             chinchillaRb.AddForce(launchDirection * currentForce, ForceMode.Impulse);
 
+            PlayFireSound();
+
             CameraController camController = chinchillaRb.GetComponent<CameraController>();
             if (camController != null) camController.EnableFlightCamera();
 
@@ -331,4 +337,17 @@ public class CannonLauncher : MonoBehaviour
 
         lineRenderer.SetPositions(points);
     }
+
+    public void PlayFireSound()
+    {
+
+
+        if (fireSound != null)
+        {
+
+            fireSound.PlayFeedbacks();
+        }
+
+    }
+   
 }

@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: 9c3ab9e647c0591438f2a8efe267e930
+guid: f6382db3c3f807e46a24aa933fb118c8
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Chinchilla_Ear_Inner
-    second: {fileID: 2100000, guid: 78c3555b13b192c4fbe475886169cf56, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Chinchilla_Fur_Material
-    second: {fileID: 2100000, guid: 8be7ffa9a5ee6654ba44693e63aad18e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
