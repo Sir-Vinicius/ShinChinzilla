@@ -1,8 +1,9 @@
-using UnityEngine;
+using MoreMountains.Feedbacks;
 using System;
+using TMPro;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private float delay = 3f;
@@ -10,6 +11,10 @@ public class GameManager : MonoBehaviour
 
     public PlayerInput playerInput;
     public TailAttack tailAttack;
+    public TextMeshProUGUI launchText;
+
+    [SerializeField] private MMF_Player victorySound;
+    [SerializeField] private MMF_Player defeatSound;
 
     // Estados
     public enum GameState
@@ -66,9 +71,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(delay);
 
-        if(isGameFinished)
+        launchText.text = "Lançamento: " + (maxAttempts - attemptsUsed);
+        if (isGameFinished)
         {
             // Delay para ir para a tela de resultado
             attemptDuration = 0f;
@@ -184,7 +189,11 @@ public class GameManager : MonoBehaviour
             // A partida é vencida quando o progresso alcança pelo menos 40%.
             bool victory = scoreManager.DestructionProgress >= 40f;
             isGameFinished = true;
-            if (delay <= 0f) FinishGame(victory);
+            if (delay <= 0f) 
+            { 
+                FinishGame(victory);
+                PlaySound(victory);
+            }
             return;
         }
 
@@ -226,5 +235,17 @@ public class GameManager : MonoBehaviour
 
             GameFinished?.Invoke(victory);
              
+    }
+
+    public void PlaySound(bool victory)
+    {
+        if (victory)
+        {
+            victorySound.PlayFeedbacks();
+        }
+        else
+        {
+            defeatSound.PlayFeedbacks();
+        }
     }
 }

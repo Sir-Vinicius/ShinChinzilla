@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using MoreMountains.Feedbacks;
 
 public class ShinSwap : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ShinSwap : MonoBehaviour
     [SerializeField] private float landingDelay = 1f;
     private bool hasSwapped = false;
 
+    [SerializeField] private MMF_Player swapSound;
     [Header("Explosão de Impacto")]
     [SerializeField] private float attackRange = 5f;
     [SerializeField] private float attackForce = 150f;
@@ -68,6 +70,8 @@ public class ShinSwap : MonoBehaviour
             
 
             Debug.Log("Transformação feita");
+
+            PlaySwapSound();
         }
     }
 
@@ -135,5 +139,17 @@ public class ShinSwap : MonoBehaviour
         chinchillaRb.useGravity = false;
 
         Debug.Log("Chinchila retornou à forma de bola.");
+    }
+
+    public void PlaySwapSound()
+    {
+
+
+        if (swapSound != null)
+        {
+
+            swapSound.PlayFeedbacks();
+        }
+
     }
 }
