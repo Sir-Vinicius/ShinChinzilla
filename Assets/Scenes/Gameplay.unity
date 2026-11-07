@@ -38135,7 +38135,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8251809659934049116, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1816914336}
+    - targetCorrespondingSourceObject: {fileID: 2664303341917696280, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1816914335}
+    - targetCorrespondingSourceObject: {fileID: 518336965896558206, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1135574614}
   m_SourcePrefab: {fileID: 100100000, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
 --- !u!114 &387621882 stripped
 MonoBehaviour:
@@ -55834,6 +55843,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8964392484366028035, guid: 15a37853cd11dd54aabc9ee84a7927dc, type: 3}
   m_PrefabInstance: {fileID: 240284714}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1135574613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 518336965896558206, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
+  m_PrefabInstance: {fileID: 387621881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1135574614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135574613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2011159027}
+          m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMF_Player, MoreMountains.Tools
+          m_MethodName: PlayFeedbacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2011159026}
+          m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMF_Player, MoreMountains.Tools
+          m_MethodName: PlayFeedbacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1136462868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83567,6 +83626,106 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a4c86d63072fac4790cd660616307de, type: 3}
+--- !u!1 &1816914333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2664303341917696280, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
+  m_PrefabInstance: {fileID: 387621881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1816914334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8251809659934049116, guid: bdcfeca5cac56cd4ea4d1e277349060a, type: 3}
+  m_PrefabInstance: {fileID: 387621881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1816914335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816914333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2011159027}
+          m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMF_Player, MoreMountains.Tools
+          m_MethodName: PlayFeedbacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2011159026}
+          m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMF_Player, MoreMountains.Tools
+          m_MethodName: PlayFeedbacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1816914336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816914334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2011159027}
+          m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMF_Player, MoreMountains.Tools
+          m_MethodName: PlayFeedbacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2011159026}
+          m_TargetAssemblyTypeName: MoreMountains.Feedbacks.MMF_Player, MoreMountains.Tools
+          m_MethodName: PlayFeedbacks
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1817034207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 229208550183341387, guid: 062a3982f55d02f4eae357276596f70a, type: 3}
@@ -88948,6 +89107,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7412275407843443514, guid: 16acf40f845382d4795a10ca2dc0f24f, type: 3}
   m_PrefabInstance: {fileID: 1698776349}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2011159025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 908095726275424212, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_Name
+      value: ButtonSounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 392.71445
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 547.03436
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5290688479936077308, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+--- !u!114 &2011159026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 254757462404573456, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+  m_PrefabInstance: {fileID: 2011159025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MoreMountains.Tools::MoreMountains.Feedbacks.MMF_Player
+--- !u!114 &2011159027 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5000517616026163061, guid: baed5b0ddae8a664691b861144df99ad, type: 3}
+  m_PrefabInstance: {fileID: 2011159025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da43522623d4704e979466dc7650b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MoreMountains.Tools::MoreMountains.Feedbacks.MMF_Player
 --- !u!1 &2013641431
 GameObject:
   m_ObjectHideFlags: 0
@@ -92277,3 +92515,4 @@ SceneRoots:
   - {fileID: 110760061}
   - {fileID: 1137327511}
   - {fileID: 1714317362}
+  - {fileID: 2011159025}
